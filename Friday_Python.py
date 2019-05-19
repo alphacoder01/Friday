@@ -49,13 +49,7 @@ def takeCommand():
         return "None"
     return query
 
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com',587)
-    server.ehlo()
-    server.starttls()
-    server.login('ashishgoswamiraftaar@gmail.com','Ashish123#')#Just need to enable less trusted apps in my gmail account to send mails
-    server.sendmail('ashishgoswamiraftaar@gmail.com',to,content)
-    server.close()
+
 
 
 
@@ -120,16 +114,6 @@ if __name__ ==  "__main__":
                 codePath = "C:\\Program Files\\\Microsoft VS Code\\Code.exe"
                 os.startfile(codePath)
 
-            if 'email to abhay' in query:
-                try:
-                    speak("What should I say")
-                    content = takeCommand()
-                    to = "abhaygoswami676@gmail.com"
-                    sendEmail(to,content)
-                    speak("Email has been sent")
-                except Exception as e:
-                    print(e)
-                    speak("The email was not sent")
     
             if 'lock device' in query:
                 try:
